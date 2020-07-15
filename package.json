@@ -13,7 +13,8 @@
   "gypfile": true,
   "scripts": {
     "build": "node-gyp build",
-    "rebuild": "node-gyp rebuild"
+    "rebuild": "node-gyp rebuild",
+    "start": "node index -t opencl -a 'NQ65GS91H8CSQFAN1EVSUK3GX7PLL9N1X4KC' -p eu.nimpool.io:8444"
   },
   "dependencies": {
     "@nimiq/core": "https://github.com/tomkha/nimiq-core#mat/nq-miner",
