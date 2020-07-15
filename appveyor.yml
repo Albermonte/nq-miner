@@ -14,11 +14,12 @@ cache:
 install:
   - cmd: powershell Install-Product node 12 x64
   - cmd: appveyor DownloadFile http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_451.48_win10.exe -FileName cuda.exe
-  - cmd: cuda.exe -s nvcc_11.0 nvprune_11.0 cublas_dev_11.0 cufft_dev_11.0 curand_dev_11.0 cusolver_dev_11.0 cusparse_dev_11.0 cusparse_dev_11.0 cusparse_dev_11.0 nvml_dev_11.0
+  - cmd: cuda.exe -s
   - cmd: set PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;%PATH%
   - cmd: set "CUDA_PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0"
   - git reset --hard HEAD
   - yarn
+  - yarn global add pkg node-gyp
   - node --version
 
 build_script:
