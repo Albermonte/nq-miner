@@ -21,7 +21,7 @@ install:
   - sh: sudo apt-get update
   - sh: sudo apt-get -y install cuda
   - sh: export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
-  - sh: nvcc  –-version
+  - sh: nvcc –-version
   - git reset --hard HEAD
   - yarn
   - yarn global add pkg node-gyp
@@ -29,7 +29,6 @@ install:
 
 build_script:
   - npm run build
-  - npm run release
 
 artifacts:
   - path: ./nq-miner.zip
