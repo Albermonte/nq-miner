@@ -13,8 +13,8 @@ cache:
 
 install:
   - cmd: powershell Install-Product node 12 x64
-  - cmd: appveyor DownloadFile https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_411.31_win10 -FileName cuda.exe
-  - cmd: cuda.exe -s nvcc_10.0 nvprune_10.0 cublas_dev_10.0 cufft_dev_10.0 curand_dev_10.0 cusolver_dev_10.0 cusparse_dev_10.0 nvgraph_dev_10.0 npp_dev_10.0 nvrtc_dev_10.0 nvml_dev_10.0
+  - cmd: appveyor DownloadFile http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_451.48_win10.exe -FileName cuda.exe
+  - cmd: cuda.exe -s
   - cmd: set PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;%PATH%
   - cmd: set "CUDA_PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0"
   - git reset --hard HEAD
