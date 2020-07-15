@@ -15,7 +15,7 @@
     "start": "node index -t opencl -a 'NQ65GS91H8CSQFAN1EVSUK3GX7PLL9N1X4KC' -p eu.nimpool.io:8444",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
-    "release": "release_windows.bat"
+    "release": "release_linux.sh"
   },
   "dependencies": {
     "@nimiq/core": "https://github.com/tomkha/nimiq-core#mat/nq-miner",

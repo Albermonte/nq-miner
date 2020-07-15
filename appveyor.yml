@@ -33,5 +33,5 @@ build_script:
   - npm run build
 
 artifacts:
-  - path: ./nq-miner.zip
+  - path: ./dist/*
     name: nq-miner
