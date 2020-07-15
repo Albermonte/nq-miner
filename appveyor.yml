@@ -20,6 +20,9 @@ install:
   - sh: sudo apt-key add /var/cuda-repo-ubuntu1804-11-0-local/7fa2af80.pub
   - sh: sudo apt-get update
   - sh: sudo apt-get -y install cuda
+  - sh: export CUDA_PATH=/usr/local/cuda-11.0
+  - sh: export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
+  - sh: export LD_LIBRARY_PATH=${LD_LIBRARY_PATH}:/usr/local/cuda-11.0/lib64
   - sh: export PATH=/usr/local/cuda-11.0/bin${PATH:+:${PATH}}
   - git reset --hard HEAD
   - yarn
