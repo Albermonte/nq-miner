@@ -24,3 +24,8 @@ install:
 
 build_script:
   - npm run build
+  - npm run release
+
+artifacts:
+  - path: ./nq-miner.zip
+    name: nq-miner
