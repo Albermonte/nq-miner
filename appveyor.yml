@@ -1,6 +1,7 @@
 version: 0.1.{build}
 
 image:
+  - Visual Studio 2017
   - Ubuntu
 
 platform:
@@ -12,6 +13,11 @@ cache:
   - '%USERPROFILE%\AppData\Local\Yarn\cache'
 
 install:
+  - cmd: powershell Install-Product node 12 x64
+  - cmd: appveyor DownloadFile http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_451.48_win10.exe -FileName cuda.exe
+  - cmd: cuda.exe -s
+  - cmd: set PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\bin;%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0\libnvvp;%PATH%
+  - cmd: set "CUDA_PATH=%ProgramFiles%\NVIDIA GPU Computing Toolkit\CUDA\v11.0"
   - sh: nvm install 12
   - sh: wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1804/x86_64/cuda-ubuntu1804.pin
   - sh: sudo mv cuda-ubuntu1804.pin /etc/apt/preferences.d/cuda-repository-pin-600

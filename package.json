@@ -12,7 +12,7 @@
   "license": "AGPL-3.0-or-later",
   "gypfile": true,
   "scripts": {
-    "start": "node index -t opencl -a 'NQ65GS91H8CSQFAN1EVSUK3GX7PLL9N1X4KC' -p eu.nimpool.io:8444",
+    "start": "node index -t opencl -a 'NQ65GS91H8CSQFAN1EVSUK3GX7PLL9N1X4KC' -p pool.acemining.co:8443 --network=test",
     "build": "node-gyp build",
     "rebuild": "node-gyp rebuild",
     "release": "./release_linux.sh"
