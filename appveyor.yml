@@ -22,12 +22,11 @@ install:
   - sh: sudo apt-get update
   - sh: sudo apt-get -y install freeglut3 freeglut3-dev libxi-dev libxmu-dev
   - sh: sudo apt-get install gcc-6 g++-6 linux-headers-$(uname -r) nvidia-384 -y
-  - sh: wget -O cuda_10.0.130_410.48_linux -c https://developer.nvidia.com/compute/cuda/10.0/Prod/local_installers/cuda_10.0.130_410.48_linux
-  - sh: sudo chmod +x cuda_10.0.130_410.48_linux
-  - sh: sudo ./cuda_10.0.130_410.48_linux --verbose --silent --toolkit --override
-  - sh: export CUDA_PATH=/usr/local/cuda-10.0
-  - sh: export PATH="$PATH:/usr/local/cuda-10.0/bin"
-  - sh: export LD_LIBRARY_PATH=/usr/local/cuda-10.0/lib64\
+  - sh: wget http://developer.download.nvidia.com/compute/cuda/11.0.2/local_installers/cuda_11.0.2_450.51.05_linux.run
+  - sh: sudo sh cuda_11.0.2_450.51.05_linux.run --verbose --silent --toolkit --override
+  - sh: export CUDA_PATH=/usr/local/cuda-11.0
+  - sh: export PATH="$PATH:/usr/local/cuda-11.0/bin"
+  - sh: export LD_LIBRARY_PATH=/usr/local/cuda-11.0/lib64\
       ${LD_LIBRARY_PATH:+:${LD_LIBRARY_PATH}}
   - git reset --hard HEAD
   - yarn
